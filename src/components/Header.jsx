@@ -1,41 +1,33 @@
-import React from "react";
-import { Logo } from "./Logo";
-import avatar from "@/images/image-avatar.png";
-import { IconCart } from "./Icons";
-import Image from "next/image";
+import { useState } from "react";
+import { Cart } from "./Cart";
+import { MobileMenu } from "./MobileMenu";
+import { NavBar } from "./NavBar";
+
+const navLinks = ["Collections", "Men", "Women", "About", "Contact"];
 
 export const Header = () => {
+  const [showCart, setShowCart] = useState(false);
+  const [toggleMenu, setToggleMenu] = useState(false);
+
   return (
-    <header className="lg:px-[165px] lg:py-7 ">
-      <div className="flex items-center justify-between">
-        <nav className="flex items-center lg:gap-[53px]">
-          <Logo />
-          <ul className="flex lg:gap-[30px] items-center">
-            <li>
-              <a href="#">Collections</a>
-            </li>
-            <li>
-              <a href="#">Men</a>
-            </li>
-            <li>
-              <a href="#">Women</a>
-            </li>
-            <li>
-              <a href="#">About</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
-            </li>
-          </ul>
-        </nav>
+    <header className="relative max-w-[1440px] mx-auto">
+      {toggleMenu && (
+        <MobileMenu
+          toggleMenu={toggleMenu}
+          setToggleMenu={setToggleMenu}
+          navLinks={navLinks}
+        />
+      )}
 
-        <div className="flex items-center lg:gap-[46px]">
-          <IconCart />
-          <Image src={avatar} width={50} height={50} alt="" />
-        </div>
-      </div>
+      <NavBar
+        setShowCart={setShowCart}
+        showCart={showCart}
+        navLinks={navLinks}
+        setToggleMenu={setToggleMenu}
+        toggleMenu={toggleMenu}
+      />
 
-      <div className="w-full mt-8 border border-gray-400"></div>
+      {showCart && <Cart />}
     </header>
   );
 };
