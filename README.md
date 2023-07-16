@@ -24,7 +24,7 @@
 
 ## Screenshot
 
-![screenshot](https://res.cloudinary.com/dssxy8tpd/image/upload/v1689524077/screencapture-ecommerce-product-page-omega-gules-vercel-app-2023-07-16-12_13_40_r4zjxb.png)
+![screenshot](https://res.cloudinary.com/dssxy8tpd/image/upload/v1689546706/screencapture-ecommerce-product-page-omega-gules-vercel-app-2023-07-16-18_30_56_emvsvx.png)
 
 ### Built With
 
