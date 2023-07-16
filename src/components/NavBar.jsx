@@ -46,7 +46,9 @@ export const NavBar = ({
                 {totalQuantities}
               </p>
             )}
-            <IconCart />
+            <div className="text-[#69707D]">
+              <IconCart />
+            </div>
           </button>
           <div className="relative w-6 h-6 lg:w-10 lg:h-10 xl:w-12 xl:h-12">
             <Image
