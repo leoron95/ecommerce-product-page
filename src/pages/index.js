@@ -36,14 +36,17 @@ export default function Home() {
             <p className="text-sm sm:text-lg">
               Challenge by{" "}
               <a
-                className="font-bold text-[#ff7d1a]"
+                className="font-bold text-[#ff7d1a] hover:opacity-50 transition-opacity ease-in"
                 href="https://www.frontendmentor.io?ref=challenge"
                 target="_blank"
               >
                 Frontend Mentor
               </a>
               . Coded by{" "}
-              <a className="font-bold text-[#ff7d1a]" href="#">
+              <a
+                className="font-bold hover:opacity-50 text-[#ff7d1a]  transition-opacity ease-in"
+                href="https://www.frontendmentor.io/profile/leoron95"
+              >
                 Leoron95
               </a>
               .
