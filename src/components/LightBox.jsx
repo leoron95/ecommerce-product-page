@@ -2,6 +2,7 @@ import React from "react";
 import { IconClose, IconNext, IconPrevious } from "./Icons";
 import { useLightBox } from "@/hooks/useLightBox";
 import { useStateContext } from "@/context/StateContext";
+import Image from "next/image";
 
 export const LightBox = ({ product }) => {
   const { images, thumbnails } = product;
@@ -39,9 +40,13 @@ export const LightBox = ({ product }) => {
                 <IconNext />
               </button>
             </div>
-            <img
+
+            <Image
               className="w-full mx-auto sm:rounded-2xl"
               src={images[current]}
+              width={550}
+              height={550}
+              alt="Product image"
             />
           </div>
 
@@ -51,11 +56,13 @@ export const LightBox = ({ product }) => {
                 key={index}
                 className="overflow-hidden bg-white rounded-lg hover:outline hover:outline-2 hover:outline-[#ff7d1a] transition-colors ease-in"
               >
-                <img
+                <Image
                   className=" w-[86px] h-full hover:opacity-50 transition-opacity ease-in hover:cursor-pointer"
                   onClick={() => handleImage(index)}
+                  width={86}
+                  height={86}
                   src={img}
-                  alt=""
+                  alt="Product image"
                 />
               </div>
             ))}

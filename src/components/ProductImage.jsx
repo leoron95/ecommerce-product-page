@@ -1,6 +1,7 @@
 import { IconNext, IconPrevious } from "./Icons";
 import { useLightBox } from "@/hooks/useLightBox";
 import { useStateContext } from "@/context/StateContext";
+import Image from "next/image";
 
 export const ProductImage = ({ product }) => {
   const { handleLightBox } = useStateContext();
@@ -24,11 +25,17 @@ export const ProductImage = ({ product }) => {
             <IconNext />
           </button>
         </div>
-        <img
-          onClick={handleLightBox}
-          className="w-full max-w-md mx-auto sm:rounded-2xl hover:cursor-pointer"
-          src={product.images[current]}
-        />
+        <div>
+          <Image
+            onClick={handleLightBox}
+            className="w-full max-w-md mx-auto min-[448px]:rounded-2xl hover:cursor-pointer"
+            width={448}
+            height={448}
+            alt="product image"
+            src={product.images[current]}
+            priority={true}
+          />
+        </div>
       </div>
       <div className="items-center justify-between hidden max-w-md lg:flex">
         {product.thumbnails.map((img, index) => (
@@ -36,11 +43,13 @@ export const ProductImage = ({ product }) => {
             key={index}
             className="overflow-hidden bg-white rounded-lg hover:outline hover:outline-2 hover:outline-[#ff7d1a] transition-colors ease-in"
           >
-            <img
-              className="w-[86px] h-full rounded-lg  hover:opacity-50 transition-opacity ease-in hover:cursor-pointer"
+            <Image
               onClick={() => handleImage(index)}
+              className="w-[86px] h-full rounded-lg  hover:opacity-50 transition-opacity ease-in hover:cursor-pointer"
+              width={86}
+              height={86}
+              alt="product image"
               src={img}
-              alt=""
             />
           </div>
         ))}

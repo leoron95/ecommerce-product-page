@@ -1,6 +1,7 @@
 import { useStateContext } from "@/context/StateContext";
 import { IconCart, IconMenu } from "./Icons";
 import { Logo } from "./Logo";
+import Image from "next/image";
 
 export const NavBar = ({
   setShowCart,
@@ -47,11 +48,12 @@ export const NavBar = ({
             )}
             <IconCart />
           </button>
-          <div className="relative ">
-            <img
-              className="hover:cursor-pointer w-6 h-6 rounded-full lg:w-10 lg:h-10 xl:w-12 xl:h-12 hover:outline hover:outline-[#ff7d1a]"
+          <div className="relative w-6 h-6 lg:w-10 lg:h-10 xl:w-12 xl:h-12">
+            <Image
+              className="hover:cursor-pointer  rounded-full  hover:outline hover:outline-[#ff7d1a]"
               src="/images/image-avatar.png"
-              alt=""
+              alt="User avatar"
+              fill
             />
           </div>
         </div>
