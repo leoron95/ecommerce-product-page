@@ -50,7 +50,9 @@ export const ProductDetails = ({ product }) => {
           onClick={() => onAdd(product, qty)}
           className="flex hover:opacity-60 bg-[#ff7d1a] transition-opacity ease-in w-full  py-4   gap-2  items-center rounded-xl justify-center "
         >
-          <IconCart />
+          <div className="text-white">
+            <IconCart />
+          </div>
           <span className="font-bold text-white">Add to cart</span>
         </button>
       </div>
