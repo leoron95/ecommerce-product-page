@@ -30,7 +30,7 @@ export const ProductDetails = ({ product }) => {
       </div>
 
       <div className="flex flex-col gap-4 mt-6 lg:flex-row xl:mt-8 lg:px-0">
-        <div className="flex items-center justify-between bg-[#ffede0] rounded-xl">
+        <div className="flex items-center justify-between bg-[#f7f8fd] rounded-xl">
           <button
             onClick={decQty}
             className="px-4 transition-opacity ease-in py-7 hover:opacity-60"
